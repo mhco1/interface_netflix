@@ -42,3 +42,34 @@ header nav a{
 header nav a:hover{
     color: #efff;
 }
+
+/* filme principal */
+
+.filme-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-size: 16px;
+    
+    height: 400px;
+    
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://www.themoviedb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg');
+
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-size: cover;
+}
+.filme-principal .pos{
+    margin-left: 60px;
+}
+
+.filme-principal .descricao{
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+
+.filme-principal .titulo{
+    font-size: 40px;
+}

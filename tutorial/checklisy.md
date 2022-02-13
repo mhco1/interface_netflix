@@ -2,7 +2,7 @@
 
 - [x] Part 1 : apresentação
 - [x] Part 2 : criar menu
-- [ ] Part 3
+- [x] Part 3 : criar filmes-principal
 - [ ] Part 4
 - [ ] Part 5
 - [ ] Part 6
