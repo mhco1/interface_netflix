@@ -1,3 +1,5 @@
+/* base */
+
 :root{
     --color1:#E50914;
     --color2:#141414;
@@ -15,8 +17,28 @@ body{
     color:white;
 }
 
+/* menu */
+
+header .conteiner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
 header .logo{
     color: var(--color1);
     font-family:Arial, Helvetica, sans-serif;
     font-size: 40px;
+}
+
+header nav a{
+    text-decoration: none;
+    color:#aaa;
+    margin-right: 10px;
+}
+
+header nav a:hover{
+    color: #efff;
 }
