@@ -1,3 +1,8 @@
+:root{
+    --color1:#E50914;
+    --color2:#141414;
+}
+
 *{
     margin: 0px;
     padding: 0px;
