@@ -1,7 +1,7 @@
 # Check list dos tutoriais
 
 - [x] Part 1 : apresentação
-- [ ] Part 2
+- [x] Part 2 : criar menu
 - [ ] Part 3
 - [ ] Part 4
 - [ ] Part 5
