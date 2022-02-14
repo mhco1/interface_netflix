@@ -5,7 +5,7 @@
 - [x] Part 3 : criar estilo do menu
 - [x] Part 4 : criar filmes-principal
 - [x] Part 5 : ajustando os botões
-- [ ] Part 6
+- [x] Part 6 : explicação container
 - [ ] Part 7
 - [ ] Part 8
 - [ ] Part 9

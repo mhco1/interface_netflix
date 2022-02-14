@@ -17,6 +17,11 @@ body{
     color:white;
 }
 
+.container{
+    margin-left: 30px;
+    padding: 10px;
+}
+
 .botao{
     cursor: pointer;
     border: none;
@@ -42,12 +47,13 @@ body{
 
 /* menu */
 
-header .conteiner{
+header .menu div{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    box-shadow: 0px 4px 12px -1px rgba(20,20,20,0.7);
+    z-index: 30;
 }
 
 header .logo{
@@ -84,14 +90,15 @@ header nav a:hover{
     background-position-y: 100%;
     background-size: cover;
 }
-.filme-principal .pos{
+
+/* .filme-principal .pos{
     margin-left: 30px;
-}
+} */
 
 .filme-principal .descricao{
-    max-width: 400px;
+    max-width: 80%;
     margin-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .filme-principal .titulo{
