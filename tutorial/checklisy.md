@@ -6,6 +6,6 @@
 - [x] Part 4 : criar filmes-principal
 - [x] Part 5 : ajustando os botões
 - [x] Part 6 : explicação container
-- [ ] Part 7
+- [x] Part 7 : criação do carrossel
 - [ ] Part 8
 - [ ] Part 9

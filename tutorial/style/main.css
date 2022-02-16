@@ -3,23 +3,24 @@
 :root{
     --color1:#E50914;
     --color2:#141414;
+    --color3:#ffffff;
 }
 
 *{
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
 
 body{
-    font-family: 'Times New Roman', Times, serif;
     background-color: var(--color2);
-    color:white;
+    color:var(--color3);
 }
 
 .container{
     margin-left: 30px;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .botao{
@@ -31,13 +32,13 @@ body{
     font-size: 12px;
 
     background-color: #00000080;
-    color: #ffffff;
+    color: var(--color3);
 
     transition: all 0.3s ease;
 }
 
 .botao:hover{
-    background-color: #ffffff;
+    background-color: var(--color3);
     color: #000000bf;
 }
 
@@ -52,6 +53,7 @@ header .menu div{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 10px;
     box-shadow: 0px 4px 12px -1px rgba(20,20,20,0.7);
     z-index: 30;
 }
@@ -81,8 +83,8 @@ header nav a:hover{
     align-items: flex-start;
 
     font-size: 16px;
-    
     height: 400px;
+    margin-bottom: 10px;
     
     background:linear-gradient(#00000080,#00000080), url('https://www.themoviedb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg');
 
@@ -91,18 +93,31 @@ header nav a:hover{
     background-size: cover;
 }
 
-/* .filme-principal .pos{
-    margin-left: 30px;
-} */
-
-.filme-principal .descricao{
+.descricao-principal{
     max-width: 80%;
     margin-top: 10px;
     margin-bottom: 30px;
 }
 
-.filme-principal .titulo{
+.titulo-principal{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 40px;
     margin-top: 15%;
+}
+
+/* carossel */
+
+.titulo-secundario{
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    /* color: var() */
+}
+
+.own{
+    margin: 0px 0px 20px;
+}
+
+.own-item{
+    margin: 0px 10px;
 }

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/main.css">
     <title>Netflix</title>
+
+    <link rel="stylesheet" href="../own/own.css">
+    <link rel="stylesheet" href="./style/main.css">
+
 </head>
-<body>
-    <script src="https://kit.fontawesome.com/a8525d050c.js" crossorigin="anonymous"></script>
-    
+<body>    
     <header>
         <div class="menu">
             <div class="container">
@@ -26,9 +27,9 @@
 
     <main>
         <div class="filme-principal">
-            <div class="container pos">
-                <h3 class="titulo">Stranger Things</h3>
-                <p class="descricao">Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina</p>
+            <div class="container">
+                <h3 class="titulo-principal">Stranger Things</h3>
+                <p class="descricao-principal">Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o que encontram são segredos, forças sobrenaturais e uma menina</p>
                 <div class="botoes">
                     <button class="botao" role="button">      
                         <i class="fa-solid fa-play"></i> ASSISTIR MAIS TARDE
@@ -39,7 +40,46 @@
                 </div>
             </div>
         </div>
-    </main>
 
+        <div class="container"> <h3 class="titulo-secundario">Filmes e series</h3></div>
+
+        <div class="own-carousel__container">
+            <div class="own-carousel__outer">
+                <div class="own-carousel own">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/5qMupAz4A9EN5Rutrkmov45mNXZ.jpg"
+                    class="own-carousel__item own-item" draggable="false">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/GM1yyjtc1wcmG3RLAERRmSFm1e.jpg"
+                    class="own-carousel__item own-item" draggable="false">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/288q0JefZUuTfqUG2qzPTCZYuAL.jpg"
+                    class="own-carousel__item own-item" draggable="false">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/zBQFWjOIE3hoYCG67Y3VVaSnLyc.jpg"
+                    class="own-carousel__item own-item" draggable="false">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/9PbtCo5IIkd26WPQfZUpPyn6fTz.jpg"
+                    class="own-carousel__item own-item" draggable="false">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/fDmy0FU90vGZo2Lw5oQR4QSh7cc.jpg"
+                    class="own-carousel__item own-item" draggable="false">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/yaX5hliSF1rwZ9WVNbUchndjFSb.jpg"
+                    class="own-carousel__item own-item" draggable="false">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/1dREXakGbByZ1kti8vfVX3I8Dc.jpg"
+                    class="own-carousel__item own-item" draggable="false">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/hES2eVAbVt08JJTqgu3jmI34Yxx.jpg"
+                    class="own-carousel__item own-item" draggable="false">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/dgG3sfVaLBDEddWjrdeOqj5jHrW.jpg"
+                    class="own-carousel__item own-item" draggable="false">
+                    <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/dsWqvNyvFj8mWTwZCVMZFgkGTHL.jpg"
+                    class="own-carousel__item own-item" draggable="false">
+                </div>
+            </div>
+                <!-- <div class="own-carousel__control">
+                <button class="control__prev">«</button>
+                <button class="control__next">»</button>
+            </div> -->
+        </div>
+
+    </main>
 </body>
+
+    <script src="./js/own.js"></script>
+    <script src="https://kit.fontawesome.com/a8525d050c.js" crossorigin="anonymous"></script>
+    <script src="../own/own.js"></script>
 </html>
