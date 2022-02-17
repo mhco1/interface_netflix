@@ -7,5 +7,5 @@
 - [x] Part 5 : ajustando os botões
 - [x] Part 6 : explicação container
 - [x] Part 7 : criação do carrossel
-- [ ] Part 8
+- [x] Part 8 : responsividade
 - [ ] Part 9
