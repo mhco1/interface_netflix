@@ -3,20 +3,32 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+itisnotexist{
+    --rgb-1: rgb(4, 9, 19);
+    --hsl-1: hsl(220, 65%, 5%);
+    --rgb-2: rgb(190, 207, 232);
+    --rgb-3: rgb(7, 75, 179);
+    --rgb-4: rgb(62, 5, 118);
+    --rgb-5: rgb(120, 9, 164);
+    --rgb-6: rgb(194, 15, 8);
+}
+
 :root{
     font-size: 18px;
     font-family: 'Lato', sans-serif;
 
-    --color-1: #040913;
-    --color-2: #becfe8;
-    --color-3: #074bb3;
-    --color-4: #3E0576;
-    --color-5: #7809A4;
-    --color-6: #C20F08;
+    --rgb-1: 4, 9, 19;
+    --hsl-1: 220, 65%;
+    --rgb-2: 190, 207, 232;
+    --rgb-3: 7, 75, 179;
+    --rgb-4: 62, 5, 118;
+    --rgb-5: 120, 9, 164;
+    --rgb-6: 194, 15, 8;
+    
 }
 
 *{
-    color: var(--color-2);
+    color: rgb(var(--rgb-2));
 }
 
 *::-webkit-scrollbar-track{
@@ -31,8 +43,8 @@
 
 *::-webkit-scrollbar-thumb{
 	border-radius: 10px;
-    box-shadow: inset 1px 1px 3px var(--color-3), inset -1px -1px 3px var(--color-3);
-	background-color: var(--color-6);
+    box-shadow: inset 1px 1px 3px rgb(var(--rgb-3)), inset -1px -1px 3px rgb(var(--rgb-3));
+	background-color: rgb(var(--rgb-6));
 }
 
 body,html{
@@ -42,7 +54,7 @@ body,html{
 }
 
 body{
-    background-color: var(--color-1);
+    background-color: rgb(var(--rgb-1));
 }
 
 .margin{
