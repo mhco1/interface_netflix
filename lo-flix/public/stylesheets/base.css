@@ -2,6 +2,8 @@
 /* base */
 
 :root{
+    font-size: 18px;
+
     --color-1: #040913;
     --color-2: #becfe8;
     --color-3: #043682;
@@ -33,6 +35,7 @@
 body,html{
     height: 100%;
     width: 100%;
+    margin-bottom: 500px;
 }
 
 body{
