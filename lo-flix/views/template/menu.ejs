@@ -1,0 +1,102 @@
+<div class="menu-main">
+
+    <script>
+        $(window).scroll(function() {
+        var heigth, scroll;
+        heigth = Number.parseInt((window.innerHeight * 6)/10);
+        scroll = $(window).scrollTop();
+        if (scroll > 60 && scroll < heigth) { // 140 é a distancia que vc rola antes da logo sumir
+            $(".menu-main .background").fadeOut();
+        } else {
+            $(".menu-main .background").fadeIn();
+        }
+        });
+    </script>
+
+    <style scoped>
+
+            .menu-main{
+                position: fixed;
+                width: 100%;
+                left:0;
+                top:0;
+                z-index: 20;
+            }
+        
+            .menu-main > .background{
+                position: fixed;
+                width: 100%;
+                left:0;
+                top:0;
+                height: 60px;
+                background-color: var(--color-1);
+            }
+
+            .menu-main > nav{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                height: 60px;
+            }
+
+            .menu-main > nav > *{
+                z-index: 30;
+            }
+
+            .menu-main .link{
+                display: flex;
+                flex-direction: row;
+            }
+
+            .menu-main .link > *{
+                text-decoration: none;
+                font-size: 1.2rem;
+                margin-right: 10px;
+                transition: all 0.5s ease;
+            }
+
+            .menu-main .link > *:hover{
+                font-size: 1.3rem;
+                text-shadow: 1px 1px 5px var(--color-3), 1px 1px 5px var(--color-3), 1px 1px 10px var(--color-6);
+                color: var(--color-6);
+            }
+
+            .menu-main .link > *::after{
+                content: '|';
+                margin-left: 10px;
+            }
+
+            .menu-main .link >*:last-child{
+                margin-right: 0px;
+            }
+
+            .menu-main .link >*:last-child::after{
+                content: '';
+                margin-left: 0px;
+            }
+
+            .menu-main .link::after{
+                content: '⸺«';
+                margin-left: 10px;
+            }
+            .menu-main .link::before{
+                content: '»⸺';
+                margin-right: 10px;
+            }
+
+    </style>
+
+    <div class="background"></div>
+
+    <nav class="margin">
+        <% logo = ['hover'] %>
+        <% include ../template/logo.ejs %>
+        <div class="link">
+            <a href="#">My playlists</a>
+            <a href="#">Playlists saved</a>
+            <a href="#">Favorites</a>
+        </div>
+    </nav>
+
+</div>

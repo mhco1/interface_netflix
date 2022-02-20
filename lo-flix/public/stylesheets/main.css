@@ -1,0 +1,21 @@
+
+/* main-lofi */
+
+.main-lofi{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-size: 16px;
+    height: 70%;
+    /* attention: heinght is link with js menu function */
+    margin-top: 60px;
+    /* margin-bottom: 10px; */
+    
+    background: linear-gradient(#0409134d,#0409134d,#040913ff), url('https://i3.ytimg.com/vi/5qap5aO4i9A/maxresdefault.jpg');
+
+    background-repeat: no-repeat;
+    background-position-y: 30%;
+    background-size: cover;
+}
