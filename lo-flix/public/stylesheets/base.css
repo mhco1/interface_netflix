@@ -1,12 +1,15 @@
 
 /* base */
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
 :root{
     font-size: 18px;
+    font-family: 'Lato', sans-serif;
 
     --color-1: #040913;
     --color-2: #becfe8;
-    --color-3: #043682;
+    --color-3: #074bb3;
     --color-4: #3E0576;
     --color-5: #7809A4;
     --color-6: #C20F08;
