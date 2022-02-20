@@ -1,23 +1,36 @@
- <div classe="logo"> 
-    <style>
+ <div id="logo">
+    <style scoped>
+        #logo{
+            display: flex;
+            align-items: center;
+        }
+
         .before, .main{
             position: fixed;
+            width: 116px;
+            transition: all 1s;
         }
 
         .main{
-            margin-top:4px;
-            margin-left:6px
+            margin: 0px 0px;
+        }
+
+        .before{
+            margin-top: 3px;
         }
     </style>
 
     <% if(logo.includes('hover')){ %>
-        <style>
+        <style scoped>
             .before{
                 opacity: 0%;
-                transition: all 1s;
             }
 
-            *:hover > .before{
+            #logo:hover > *{
+                width: 130px;
+            }
+
+            #logo:hover > .before{
                 opacity: 100%;
             }
         </style>
