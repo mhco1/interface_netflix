@@ -1,20 +1,24 @@
 <div class="menu-main">
 
     <script>
-        $(window).scroll(function() {
-        var heigth, scroll;
-        heigth = Number.parseInt((window.innerHeight * 6)/10);
-        scroll = $(window).scrollTop();
-        if (scroll > 60 && scroll < heigth) { // 140 é a distancia que vc rola antes da logo sumir
-            $(".menu-main .background").fadeOut();
-        } else {
-            $(".menu-main .background").fadeIn();
+    scrollStorage = 0;
+
+    $(window).scroll(function() {scrollStorage++;setTimeout(function(){
+        if(scrollStorage < 2){
+            var heigth, scroll;
+            heigth = Number.parseInt((window.innerHeight * 6)/10);
+            scroll = $(window).scrollTop();
+            if (scroll > 60 && scroll < heigth) { // 140 é a distancia que vc rola antes da logo sumir
+                $(".menu-main .background").fadeOut();
+            } else {
+                $(".menu-main .background").fadeIn();
+            }
         }
-        });
+        scrollStorage--
+    },500)});
     </script>
 
     <style scoped>
-
             .menu-main{
                 position: fixed;
                 width: 100%;
