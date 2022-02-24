@@ -1,0 +1,57 @@
+<% if(carousel.includes('first')){ %> 
+<script>
+
+    window.addEventListener('load',function(){
+        //debugger;
+        posX = $('.carousel .elements').width()/2
+        $('.carousel .elements').scrollLeft(posX);
+    
+        $('.carousel .elements').scroll(function scroll(){
+            this.scrollLeft;
+            this.clientWidth;
+            elWidth = this.getElementsByTagName('img')[0].clientWidth;
+            this.clientWidth 
+        })
+    })
+    
+</script>
+<% } %>
+
+<div class="carousel">
+
+    <style>
+        .carousel{
+
+        }
+
+        .carousel > .elements{
+            display: flex;
+            flex-direction: 100px;
+            overflow-x: scroll;
+        }
+
+        .carousel > .elements > *{
+            height: 80px;
+        }
+    </style>
+    <div class="elements">
+        <img src="https://i3.ytimg.com/vi/-5KAN9_CzSA/maxresdefault.jpg" draggable="false" style="order: 19;">
+        <img src="https://i3.ytimg.com/vi/25BkVBgFD9Y/maxresdefault.jpg" draggable="false" style="order: 20;">
+        <img src="https://i3.ytimg.com/vi/MtT5_PgLJlY/maxresdefault.jpg" draggable="false" style="order: 21;">
+        <img src="https://i3.ytimg.com/vi/jvphHbWIJ4A/maxresdefault.jpg" draggable="false" style="order: 22;">
+        <img src="https://i3.ytimg.com/vi/5uk6cFPL19w/maxresdefault.jpg" draggable="false" style="order: 23;">
+        <img src="https://i3.ytimg.com/vi/jrTMMG0zJyI/maxresdefault.jpg" draggable="false" style="order: 24;">
+        <img src="https://i3.ytimg.com/vi/lTRiuFIWV54/maxresdefault.jpg" draggable="false" style="order: 25;">
+        <img src="https://i3.ytimg.com/vi/XE2IvHxdkDM/maxresdefault.jpg" draggable="false" style="order: 26;">
+        <img src="https://i3.ytimg.com/vi/xgirCNccI68/maxresdefault.jpg" draggable="false" style="order: 27;">
+        <img src="https://i3.ytimg.com/vi/-5KAN9_CzSA/maxresdefault.jpg" draggable="false" style="order: 28;">
+        <img src="https://i3.ytimg.com/vi/25BkVBgFD9Y/maxresdefault.jpg" draggable="false" style="order: 29;">
+        <img src="https://i3.ytimg.com/vi/MtT5_PgLJlY/maxresdefault.jpg" draggable="false" style="order: 30;">
+        <img src="https://i3.ytimg.com/vi/jvphHbWIJ4A/maxresdefault.jpg" draggable="false" style="order: 31;">
+        <img src="https://i3.ytimg.com/vi/5uk6cFPL19w/maxresdefault.jpg" draggable="false" style="order: 32;">
+        <img src="https://i3.ytimg.com/vi/jrTMMG0zJyI/maxresdefault.jpg" draggable="false" style="order: 33;">
+        <img src="https://i3.ytimg.com/vi/lTRiuFIWV54/maxresdefault.jpg" draggable="false" style="order: 34;">
+        <img src="https://i3.ytimg.com/vi/XE2IvHxdkDM/maxresdefault.jpg" draggable="false" style="order: 35;">
+        <img src="https://i3.ytimg.com/vi/xgirCNccI68/maxresdefault.jpg" draggable="false" style="order: 36;">
+    </div>
+</div>
