@@ -27,7 +27,7 @@ itisnotexist{
     
 }
 
-*{
+*, a{
     color: rgb(var(--rgb-2));
 }
 
