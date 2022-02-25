@@ -1,90 +1,92 @@
-<% if(carousel.includes('first')){ %>
-<script>
-$(document).ready(function(){
-    $('.carousel').slick({
-    infinite: true,
-    slidesToShow: 9,
-    slidesToScroll: 1,
-    });
-});
-</script>
-<% } %>
-
-<style scoped>
-    .carousel img{
-        height: 80px;
+<% carousel_ejs = function(){ 
+    var argObj, last;
+    arguments = [...arguments];
+    last = arguments[arguments.length-1];
+    if(typeof last === 'object' && last !== null && !(Array.isArray(last))){
+        argObj = arguments.pop();
     }
+    last = undefined %>
 
-/* slick but */
+    <% if(arguments.includes('first')){ %>
+        <script>
+            $(document).ready(function(){
+                $('.carousel').slick({
+                infinite: true,
+                slidesToShow: 9,
+                slidesToScroll: 1,
+                });
+            });
+        </script>
+    <% } %>
 
-    .slick-prev,
-    .slick-next {
-        display: block;
-        position: absolute;
-        font-size: 0;
-        -webkit-text-stroke-width: 2px;
-        top:0;
-        width:3rem;
-        height: 100%;
-        border: 0;
-        /* color: rgb(var(--rgb-6)); */
-        -webkit-text-stroke-color: rgb(var(--rgb-6));
-        background-color: hsl(var(--hsl-1),5%,30%);
-        z-index: 1;
-        transition: all 0.5s ease;
-    }
+    <style scoped>
+        .carousel img{
+            height: 80px;
+        }
 
-    .slick-prev {
-        left: 0px;
-    }
+    </style>
 
-    .slick-next {
-        right: 0px;
-        /* text-align: right; */
-    }
+    <style scoped>
+    /* slick button */
 
-    .slick-prev:after {
-        content: "<";
-        font-size: 2rem;
-    }
+        .slick-prev,
+        .slick-next {
+            display: block;
+            position: absolute;
+            font-size: 0;
+            -webkit-text-stroke-width: 2px;
+            top:0;
+            width:3rem;
+            height: 100%;
+            border: 0;
+            /* color: rgb(var(--rgb-6)); */
+            -webkit-text-stroke-color: rgb(var(--rgb-6));
+            background-color: hsl(var(--hsl-1),5%,30%);
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
 
-    .slick-next:after {
-        content: ">";
-        font-size: 2rem;
-    }
+        .slick-prev {
+            left: 0px;
+        }
 
-    .slick-prev:hover,
-    .slick-next:hover {
-        background-color: rgb(var(--rgb-1));
-    }
+        .slick-next {
+            right: 0px;
+            /* text-align: right; */
+        }
 
-    .slick-prev:hover:after,
-    .slick-next:hover:after {
-        /* color: rgb(var(--rgb-6)); */
-        font-size: 2.5rem;
-        -webkit-text-stroke-color: rgb(var(--rgb-3));
-        text-shadow: 1px 1px 5px rgb(var(--rgb-6)), 1px 1px 5px rgb(var(--rgb-6)), 1px 1px 10px rgb(var(--rgb-3));
-    }
+        .slick-prev:after {
+            content: "<";
+            font-size: 2rem;
+        }
 
-</style>
+        .slick-next:after {
+            content: ">";
+            font-size: 2rem;
+        }
 
-<div class="carousel">
-    <div><img src="https://i3.ytimg.com/vi/-5KAN9_CzSA/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/25BkVBgFD9Y/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/MtT5_PgLJlY/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/jvphHbWIJ4A/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/5uk6cFPL19w/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/jrTMMG0zJyI/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/lTRiuFIWV54/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/XE2IvHxdkDM/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/xgirCNccI68/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/-5KAN9_CzSA/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/25BkVBgFD9Y/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/MtT5_PgLJlY/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/jvphHbWIJ4A/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/5uk6cFPL19w/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/jrTMMG0zJyI/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/lTRiuFIWV54/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/XE2IvHxdkDM/maxresdefault.jpg" draggable="false"></div>
-    <div><img src="https://i3.ytimg.com/vi/xgirCNccI68/maxresdefault.jpg" draggable="false"></div>
-</div>
+        .slick-prev:hover,
+        .slick-next:hover {
+            background-color: rgb(var(--rgb-1));
+        }
+
+        .slick-prev:hover:after,
+        .slick-next:hover:after {
+            /* color: rgb(var(--rgb-6)); */
+            font-size: 2.5rem;
+            -webkit-text-stroke-color: rgb(var(--rgb-3));
+            text-shadow: 1px 1px 5px rgb(var(--rgb-6)), 1px 1px 5px rgb(var(--rgb-6)), 1px 1px 10px rgb(var(--rgb-3));
+        }
+
+    </style>
+
+    <div class="title">
+        <%= argObj.title %>
+    </div>
+
+    <div class="carousel">
+        <% for(i = 0; i < argObj.img.length; i++){ %>
+            <div><img src="https://i3.ytimg.com/vi/<%= argObj.img[i] %>/maxresdefault.jpg" draggable="false"></div>
+        <% } %>
+    </div>
+<% } %> 

@@ -1,3 +1,7 @@
+<% include ./template/menu.ejs %>
+<% include ./template/carousel.ejs %>
+<% include ./template/logo.ejs %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,19 +30,19 @@
 
 <body>
     <header>
-        <% include ./template/menu.ejs %> 
+        <% menu_ejs() %>
     </header>
     
     <section class="main-lofi">
     </section>
 
     <section>
-        <% carousel = ['first'] %> 
-        <% include ./template/carousel.ejs %>
-        <% carousel = [] %> 
-        <% include ./template/carousel.ejs %>
-        <% carousel = [] %> 
-        <% include ./template/carousel.ejs %>
+        <% img =[
+        '-5KAN9_CzSA', '25BkVBgFD9Y', 'MtT5_PgLJlY', 'jvphHbWIJ4A', '5uk6cFPL19w', 'jrTMMG0zJyI', 'lTRiuFIWV54', 'XE2IvHxdkDM', 'xgirCNccI68', '-5KAN9_CzSA', '25BkVBgFD9Y', 'MtT5_PgLJlY', 'jvphHbWIJ4A', '5uk6cFPL19w', 'jrTMMG0zJyI', 'lTRiuFIWV54', 'XE2IvHxdkDM', 'xgirCNccI68'
+        ] %> 
+        <% carousel_ejs('first',{title:'Recommended', img:img}) %>
+        <% carousel_ejs({title:'Most popular', img:img}) %>
+        <% carousel_ejs({title:'Resently you listened',img:img}) %>
     </section>
 </body>
 </html>

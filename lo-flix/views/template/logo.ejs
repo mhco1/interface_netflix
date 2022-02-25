@@ -1,42 +1,51 @@
- <div class="logo">
-    <style scoped>
-        .logo{
-            display: flex;
-            align-items: center;
-        }
+<% logo_ejs = function(){
+    var argObj, last;
+    arguments = [...arguments];
+    last = arguments[arguments.length-1];
+    if(typeof last === 'object' && last !== null && !(Array.isArray(last))){
+        argObj = arguments.pop();
+    }
+    last = undefined %>
 
-        .before, .main{
-            position: fixed;
-            width: 116px;
-            transition: all 1s;
-        }
-
-        .main{
-            margin: 0px 0px;
-        }
-
-        .before{
-            margin-top: 3px;
-        }
-    </style>
-
-    <% if(logo.includes('hover')){ %>
+    <div class="logo">
         <style scoped>
+            .logo{
+                display: flex;
+                align-items: center;
+            }
+
+            .before, .main{
+                position: fixed;
+                width: 116px;
+                transition: all 1s;
+            }
+
+            .main{
+                margin: 0px 0px;
+            }
+
             .before{
-                opacity: 0%;
-            }
-
-            .logo:hover > *{
-                width: 130px;
-            }
-
-            .logo:hover > .before{
-                opacity: 100%;
+                margin-top: 3px;
             }
         </style>
-    <% } %> 
 
-    </>   
-    <img class="before" src="./images/logo_ef_116x35.svg" alt="logo">
-    <img class="main" src="./images/logo_116x35.svg" alt="logo">
-</div>
+        <% if(arguments.includes('hover')){ %>
+            <style scoped>
+                .before{
+                    opacity: 0%;
+                }
+
+                .logo:hover > *{
+                    width: 130px;
+                }
+
+                .logo:hover > .before{
+                    opacity: 100%;
+                }
+            </style>
+        <% } %> 
+
+        <img class="before" src="./images/logo_ef_116x35.svg" alt="logo">
+        <img class="main" src="./images/logo_116x35.svg" alt="logo">
+    </div>
+<% } %> 

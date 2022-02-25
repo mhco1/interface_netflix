@@ -1,24 +1,33 @@
-<div class="menu-main">
+<% menu_ejs = function(){ 
+    var argObj, last;
+    arguments = [...arguments];
+    last = arguments[arguments.length-1];
+    if(typeof last === 'object' && last !== null && !(Array.isArray(last))){
+        argObj = arguments.pop();
+    }
+    last = undefined %>
 
-    <script>
-    scrollStorage = 0;
+    <div class="menu-main">
 
-    $(window).scroll(function() {scrollStorage++;setTimeout(function(){
-        if(scrollStorage < 2){
-            var heigth, scroll;
-            heigth = Number.parseInt((window.innerHeight * 6)/10);
-            scroll = $(window).scrollTop();
-            if (scroll > 60 && scroll < heigth) { // 140 é a distancia que vc rola antes da logo sumir
-                $(".menu-main .background").fadeOut();
-            } else {
-                $(".menu-main .background").fadeIn();
+        <script>
+        scrollStorage = 0;
+
+        $(window).scroll(function() {scrollStorage++;setTimeout(function(){
+            if(scrollStorage < 2){
+                var heigth, scroll;
+                heigth = Number.parseInt((window.innerHeight * 6)/10);
+                scroll = $(window).scrollTop();
+                if (scroll > 60 && scroll < heigth) { // 140 é a distancia que vc rola antes da logo sumir
+                    $(".menu-main .background").fadeOut();
+                } else {
+                    $(".menu-main .background").fadeIn();
+                }
             }
-        }
-        scrollStorage--
-    },500)});
-    </script>
+            scrollStorage--
+        },500)});
+        </script>
 
-    <style scoped>
+        <style scoped>
             .menu-main{
                 position: fixed;
                 width: 100%;
@@ -89,18 +98,17 @@
                 margin-right: 10px;
             }
 
-    </style>
+        </style>
 
-    <div class="background"></div>
+        <div class="background"></div>
 
-    <nav class="margin">
-        <% logo = ['hover'] %>
-        <% include ../template/logo.ejs %>
-        <div class="link">
-            <a href="#">My playlists</a>
-            <a href="#">Playlists saved</a>
-            <a href="#">Favorites</a>
-        </div>
-    </nav>
-
-</div>
+        <nav class="margin">
+            <% logo_ejs('hover') %>
+            <div class="link">
+                <a href="#">My playlists</a>
+                <a href="#">Playlists saved</a>
+                <a href="#">Favorites</a>
+            </div>
+        </nav>
+    </div>
+<% } %>
