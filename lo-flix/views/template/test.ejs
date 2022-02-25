@@ -1,0 +1,23 @@
+<% carousel_ejs = function(){
+    var argObj, last;
+    arguments = [...arguments];
+    last = arguments[arguments.length-1];
+    if(typeof last === 'object' && last !== null && !(Array.isArray(last))){
+        argObj = arguments.pop();
+    }
+    last = undefined %> 
+    <h1> <%= arguments %> | <%= argObj %> </h1>
+
+    <% if(arguments.includes('first')){ %>
+        <script>
+            console.log('script first ok')
+        </script>
+    <% } %>
+
+    <div class="carousel">
+        <% for(i = 0; i < argObj.img.length; i++){ %>
+            <div><img src="https://i3.ytimg.com/vi/<%= argObj.img[i] %>/maxresdefault.jpg" draggable="false"></div>
+        <% } %>
+    </div>
+
+<% } %> 
