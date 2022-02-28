@@ -12,16 +12,38 @@
             $(document).ready(function(){
                 $('.carousel').slick({
                 infinite: true,
-                slidesToShow: 9,
+                slidesToShow: 8.5,
                 slidesToScroll: 1,
+                adaptiveHeight: true,
                 });
             });
         </script>
     <% } %>
 
     <style scoped>
-        .carousel img{
+        .carousel-container{
+            margin: 10px 0px;
+        }
+
+        .carousel .element{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90px;
+        }
+        
+        .carousel .element img{
             height: 80px;
+            transition: all 0.5s ease;
+        }
+
+        .carousel .element img:hover{
+            height: 90px;
+        }
+
+        .carousel-container .title{
+            height: 60px;
+            line-height: 60px;
         }
 
     </style>
@@ -80,13 +102,17 @@
 
     </style>
 
-    <div class="title">
-        <%= argObj.title %>
+    <div class="carousel-container">
+        <div class="title">
+            <p class="margin"><%= argObj.title %></p>
+        </div>
+
+        <div class="carousel">
+            <% for(i = 0; i < argObj.img.length; i++){ %>
+                <div class="element"><img src="https://i3.ytimg.com/vi/<%= argObj.img[i] %>/maxresdefault.jpg" draggable="false"></div>
+            <% } %>
+        </div>
     </div>
 
-    <div class="carousel">
-        <% for(i = 0; i < argObj.img.length; i++){ %>
-            <div><img src="https://i3.ytimg.com/vi/<%= argObj.img[i] %>/maxresdefault.jpg" draggable="false"></div>
-        <% } %>
-    </div>
+
 <% } %> 
