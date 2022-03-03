@@ -8,14 +8,20 @@
     /* min-width: fit-content; */
     border: solid 0px;
     border-radius: 15px;
-    color: rgb(var(--rgb-1));
     background-color: rgb(var(--rgb-2));
     box-shadow: 0 0 0rem rgb(var(--rgb-2));
     transition: all 0.5s ease;
 }
 
-.btn:hover{
+.btn,.btn *{
+    color: rgb(var(--rgb-1));
+}
+
+.btn:hover, .btn:hover *{
     color: rgb(var(--rgb-2));
+}
+
+.btn:hover{
     background-color: rgb(var(--rgb-1));
     box-shadow: 0 0 1rem rgb(var(--rgb-1));
 }

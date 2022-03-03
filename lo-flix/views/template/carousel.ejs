@@ -15,6 +15,51 @@
                 slidesToShow: 8.5,
                 slidesToScroll: 1,
                 adaptiveHeight: true,
+                responsive:[{
+                    breakpoint: 1230,
+                    settings:{
+                        slidesToShow: 7.5,
+                    }
+                },{
+                    breakpoint: 1100,
+                    settings:{
+                        slidesToShow: 7,
+                    }
+                },{
+                    breakpoint: 1030,
+                    settings:{
+                        slidesToShow: 6,
+                    }
+                },{
+                    breakpoint: 880,
+                    settings:{
+                        slidesToShow: 5,
+                    }
+                },{
+                    breakpoint: 750,
+                    settings:{
+                        slidesToShow: 4.5,
+                    }
+                },{
+                    breakpoint: 670,
+                    settings:{
+                        slidesToShow: 4,
+                    }
+                },{
+                    breakpoint: 600,
+                    settings:{
+                        slidesToShow: 3,
+                        centerMode: true,
+                        centerPadding: '5px',
+                        arrows: false,
+                    }
+                },{
+                    breakpoint: 440,
+                    settings:{
+                        slidesToShow: 2,
+                        arrows: false,
+                    }
+                }]
                 });
             });
         </script>
@@ -37,15 +82,23 @@
             transition: all 0.5s ease;
         }
 
-        .carousel .element img:hover{
-            height: 90px;
-        }
-
         .carousel-container .title{
             height: 60px;
             line-height: 60px;
         }
 
+    </style>
+
+    <style media="screen and (min-width:600px)">
+        .carousel .element img:hover{
+            height: 90px;
+        }
+    </style>
+
+    <style media="screen and (max-width:600px) and (min-width:440px)">
+        .element.slick-slide.slick-current.slick-active.slick-center img{
+            height: 90px;
+        }
     </style>
 
     <style scoped>

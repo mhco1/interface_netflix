@@ -6,111 +6,123 @@
             $('.main-lofi .description .text .fluid').slideUp();
             $('.main-lofi .elements-below .button').slideDown();
             $('.main-lofi .description')[0].style.backgroundColor = 'rgba(var(--rgb-1), .9)';
+            $('.main-lofi .description')[0].style.marginTop = '0';
             $('.main-lofi .description .read-more')[0].innerText = 'Read more';
             readMore.toggle = true;
-        }
+        };
 
         function readMore(e) {
             e.preventDefault();
             if (readMore.toggle) {
                 $('.main-lofi .description .text .fluid').slideDown();
                 $('.main-lofi .elements-below .button').slideUp();
-                $('.main-lofi .description')[0].style.backgroundColor = 'hsl(var(--hsl-1),3%)';
+                $('.main-lofi .description')[0].style.backgroundColor = "hsl(var(-"+'-hsl-1),3%)';
+                $('.main-lofi .description')[0].style.marginTop = '80px';
                 $('.main-lofi .description .read-more')[0].innerText = 'Read less';
                 readMore.toggle = false;
             } else {
                 readMoreClose(e);
-            }
+            };
         };
 
         $(document).ready(function () {
             readMore.toggle = true
             $('.main-lofi .description .text .fluid').slideUp();
         })
-
     </script>
 
-    <style>
-        .main-lofi {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+    <style scoped>
+    .main-lofi {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
 
-            height: 70vh;
-            /* attention: heinght is link with js menu function */
-            margin-top: 60px;
+        height: 70vh;
+        /* attention: heinght is link with js menu function */
+        margin-top: 60px;
 
-            border: 10px solid hsl(var(--hsl-1), 3%);
+        border: 10px solid hsl(var(--hsl-1), 3%);
 
-            box-shadow: inset 2rem 2rem 2rem hsl(var(--hsl-1), 3%), inset -2rem -2rem 2rem hsl(var(--hsl-1), 3%);
-            background: linear-gradient(rgba(var(--rgb-1), 20%), rgba(var(--rgb-1), 20%)), url('https://i3.ytimg.com/vi/5qap5aO4i9A/maxresdefault.jpg');
+        box-shadow: inset 2rem 2rem 2rem hsl(var(--hsl-1), 3%), inset -2rem -2rem 2rem hsl(var(--hsl-1), 3%);
+        background: linear-gradient(rgba(var(--rgb-1), 20%), rgba(var(--rgb-1), 20%)), url('https://i3.ytimg.com/vi/5qap5aO4i9A/maxresdefault.jpg');
 
-            background-repeat: no-repeat;
-            background-position-y: 30%;
-            background-size: cover;
-        }
+        background-repeat: no-repeat;
+        background-position-y: 30%;
+        background-size: cover;
+    }
 
-        .main-lofi .conteiner {
-            width: calc(100% - (2*var(--margin)));
-        }
+    .main-lofi .conteiner {
+        width: calc(100% - (2*var(--margin)));
+    }
 
-        .main-lofi .conteiner .title {
-            width: fit-content;
-            border: solid 5px;
-            border-radius: 20px;
-            border-color: #ffffff00;
-            box-shadow: 0 0 1rem hsl(var(--hsl-1), 3%);
-            text-shadow: 1px 1px 5px rgb(var(--rgb-3)), 1px 1px 5px rgb(var(--rgb-3)), 1px 1px 10px rgb(var(--rgb-6));
-        }
+    .main-lofi .conteiner .title {
+        width: fit-content;
+        border: solid 5px;
+        border-radius: 20px;
+        border-color: #ffffff00;
+        box-shadow: 0 0 1rem hsl(var(--hsl-1), 3%);
+        text-shadow: 1px 1px 5px rgb(var(--rgb-3)), 1px 1px 5px rgb(var(--rgb-3)), 1px 1px 10px rgb(var(--rgb-6));
+    }
 
-        .main-lofi .elements-below {
-            display: flex;
-            flex-direction: column;
-            width: fit-content;
-            max-width: 60%;
-        }
+    .main-lofi .elements-below {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        max-width: 100%;
+    }
 
-        .main-lofi .description {
-            padding: 10px;
-            border: solid 0px;
-            border-radius: 15px;
-            box-shadow: 0 0 1rem rgb(var(--rgb-1));
-            background-color: rgba(var(--rgb-1), .9);
-            z-index: 70;
-            transition: all 0.5s ease;
-        }
+    .main-lofi .description {
+        /* width: fit-content; */
+        padding: 10px;
+        border: solid 0px;
+        border-radius: 15px;
+        box-shadow: 0 0 1rem rgb(var(--rgb-1));
+        background-color: rgba(var(--rgb-1), .9);
+        transition: all 0.5s ease;
+        z-index: 30;
+    }
 
-        .main-lofi .description .channel {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
+    .main-lofi .description .channel {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 
-        .main-lofi .description .channel>* {
-            margin-left: 10px
-        }
+    .main-lofi .description .channel>* {
+        margin-left: 10px
+    }
 
-        .main-lofi .description .user {
-            width: 30px;
-            height: 30px;
+    .main-lofi .description .user {
+        width: 30px;
+        height: 30px;
 
-            border: solid 1px;
-            border-radius: 50%;
-        }
+        border: solid 1px;
+        border-radius: 50%;
+    }
 
-        .main-lofi .description .text {}
+    /* .main-lofi .description .text {} */
 
-        .main-lofi .description .read-more {
-            display: block;
-            cursor: pointer;
-        }
+    .main-lofi .description .read-more {
+        display: block;
+        cursor: pointer;
+    }
 
-        .main-lofi .button {
-            --btn-n: 2;
-            display: flex;
-            flex-direction: row;
-            width: 50%;
+    .main-lofi .button {
+        --btn-n: 2;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .main-lofi .button i{
+        margin-right: 5px;
+    }
+    </style>
+
+    <style media="screen and (max-width:620px)" scoped>
+        .main-lofi .elements-below{
+            margin: 0 auto;
         }
     </style>
 
@@ -131,8 +143,8 @@
                 <p class="read-more" onclick="readMore(event)">Read more</p>
             </div>
             <div class="button">
-                <button class="btn">Play</button>
-                <button class="btn">Inscribe</button>
+                <button class="btn"><i class="fa-solid fa-play"></i>Play</button>
+                <button class="btn"><i class="fa-solid fa-bell"></i>Inscribe</button>
             </div>
         </div>
         </div>     

@@ -14,10 +14,6 @@ itisnotexist{
 }
 
 :root{
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    letter-spacing: .2rem;
-
     --rgb-1: 4, 9, 19;
     --hsl-1: 220, 65%;
     --rgb-2: 190, 207, 232;
@@ -27,6 +23,18 @@ itisnotexist{
     --rgb-6: 194, 15, 8;
     
     --margin: 30px;
+}
+
+:root{
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    letter-spacing: .2rem;
+}
+
+@media screen and (max-width:900px) {
+    :root{
+        font-size: 14px;
+    }
 }
 
 *, a{
