@@ -1,4 +1,99 @@
-<%= include('./template/test.ejs')%>
-<br>---<br>
-<% include ./template/test.ejs %>
-<% carousel_ejs(1,2,'first',{img:['-5KAN9_CzSA', '25BkVBgFD9Y',123]}) %> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../stylesheets/normalize.css">
+    <link rel="stylesheet" href="../stylesheets/base.css">
+
+    <title>Test</title>
+</head>
+
+<script src="../javascripts/dom.js"></script>
+<script>
+var loop,img;
+
+function load(){
+    var ii, heigth;
+    img = dom('.img[0]');
+    ii = heigth = Number.parseInt(img.offsetHeight/80);
+    img = dom('div',img);
+
+    for (var i = 0, limit = (img.length)/5; i < limit; i++) {
+        var delay;
+        delay = (i-0.5)<0 ? 0 : (i-0.5);
+
+        dom('~~bg-pos:-'+(ii+120)+'px',img[i]);
+        dom('~~bg-pos:-'+(ii+(heigth*16)+120)+'px',img[i+16]);
+        dom('~~bg-pos:-'+(ii+(heigth*32)+120)+'px',img[i+32]);
+        dom('~~bg-pos:-'+(ii+(heigth*64)+120)+'px',img[i+64]);
+        dom('~~bg-pos:-'+(ii+(heigth*48)+120)+'px',img[i+48]);
+        dom('~~delay:'+ delay +'s',img[i]);
+        dom('~~delay:'+ delay +'s',img[i+16]);
+        dom('~~delay:'+ delay +'s',img[i+32]);
+        dom('~~delay:'+ delay +'s',img[i+64]);
+        dom('~~delay:'+ delay +'s',img[i+48]);
+        ii += heigth;
+    }
+
+    dom('.img[0] ..vhs-run');
+
+    [...img].slice(-1)[0].addEventListener('animationend',function(){
+        dom('.img[0] ..vhs-run');
+        setTimeout(function(){
+            dom('.img[0] ..vhs-run');
+        },0)
+    })
+}
+
+window.addEventListener('load',load);
+</script>
+
+<body>
+    <style scoped>
+        .img{
+            margin-top: 60px;
+            height: 70vh;
+        }
+
+        .img > div{
+            width: 100%;
+            height: 1.1%;
+            background-size: cover;
+            background-position-y: var(--bg-pos);
+            background-image: url('https://i3.ytimg.com/vi/5qap5aO4i9A/maxresdefault.jpg');
+        }
+
+        .vhs-run div{
+            animation-name: vhs-key;
+            animation-duration: 3s;
+            animation-delay: var(--delay);
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            transform: scale(1,1);
+            
+        }
+
+         @keyframes vhs-key {
+             0%{
+                background-position-y: var(--bg-pos);
+             }
+
+            50% {
+                background-position-y: calc(var(--bg-pos) - 10px);
+            }
+
+            100% {
+                background-position-y: var(--bg-pos);
+            }
+        }
+    
+    </style>
+    
+    <div class="img">
+        <% for(var i=0; i<80;i++){%> <div></div><%}%>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./stylesheets/normalize.css">
+    <link rel="stylesheet" href="./stylesheets/base.css">
+
+    <title>Test</title>
+</head>
+
+<!-- jquery -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+<script src="./javascripts/dom.js"></script>
+
+<script>
+
+    var img, vhs = {};
+
+/* function alterPice(pice,value){
+        var str, n;
+        str = 'div['+(pice)+'] ~~vhs';
+        n = dom(str,img);
+        n = Number.parseInt(n)+value;
+        str = 'div['+(pice)+'] ~~vhs:'+(n)+'px';
+        dom(str,img);
+    }*/
+
+    function alterPice(pice,value){
+        var el,str, n;
+        el = dom('div',img)[pice]
+        str = '~~vhs';
+        n = dom(str,el);
+        n = Number.parseInt(n)+value;
+        str = '~~vhs:'+(n)+'px';
+        dom(str,el);
+        str = '~background-position-x:'+value*2+'px';
+        dom(str,el);
+    }
+
+    function load(){
+        var ii, heigth;
+        img = dom('.img[0]');
+        ii = heigth = Number.parseInt(img.offsetHeight/60);
+
+        for (var i in [...dom('div',img)]){
+            dom('div['+i+'] ~~vhs:'+(ii+120)+'px',img);
+            ii += heigth;
+        };
+
+        alterPice(14,-20);
+        alterPice(29,-20);
+        alterPice(44,-20);
+        alterPice(59,-20);
+        vhs.loop = setInterval((function(){
+            var waves = 60;
+            var waveHeigth = 20;
+            //debugger
+            if(vhs.i-1 < 0)
+                {alterPice(waves-1,waveHeigth)}
+            else
+                {alterPice(vhs.i-1,waveHeigth)};
+
+            alterPice(vhs.i,-waveHeigth);
+            alterPice(vhs.i+14,waveHeigth);
+            alterPice(vhs.i+15,-waveHeigth);
+            alterPice(vhs.i+29,waveHeigth);
+            alterPice(vhs.i+30,-waveHeigth);
+            alterPice(vhs.i+44,waveHeigth);
+            alterPice(vhs.i+45,-waveHeigth);
+            
+
+            //console.log(vhs.i);
+            //clearInterval(vhs.loop)
+            if(vhs.i < (waves/4)-1){vhs.i++}else{vhs.i = 0};
+        }),300);
+        //clearInterval(vhs.loop);
+
+        vhs.i = 0;
+    }
+
+    window.addEventListener('load',load);
+
+</script>
+
+<body>
+    <style scoped>
+        .img{
+            margin-top: 60px;
+            height: 70vh;
+        }
+
+        .img > div{
+            width: 100%;
+            height: 1.5%;
+            /* background-repeat: no-repeat !important; */
+            background-size: cover !important;
+            background-position-y: calc((-1)*var(--vhs))!important;
+            background: url('https://i3.ytimg.com/vi/5qap5aO4i9A/maxresdefault.jpg');
+            transition: all 5s ease;
+            /* animation: vhs 1s ease .5s infinite alternate; */
+        }
+
+/*         @keyframes vhs {
+            to {
+                --vhs: calc(var(--vhs)+10);
+            }
+        } */
+    
+    </style>
+    
+    <div class="img">
+        <% for(var i=0; i<60;i++){%> <div></div> <%#- '<div class="img'+(i+1)+'"></div>' %><%}%>
+    </div>
+
+</body>
+</html>

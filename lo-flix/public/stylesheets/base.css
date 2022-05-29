@@ -60,7 +60,7 @@ itisnotexist{
 body,html{
     height: 100%;
     width: 100%;
-    margin-bottom: 500px;
+    margin: 0px;
 }
 
 body{
